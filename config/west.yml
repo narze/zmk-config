@@ -2,10 +2,19 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
   projects:
+    # - name: zmk
+    #   remote: zmkfirmware
+    #   revision: main
+    #   import: app/west.yml
+
+    # Use Pete's fork until this PR is merged
+    # https://github.com/zmkfirmware/zmk/pull/1553
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: petejohanson
+      revision: shields/splitkb-aurora-lily58
       import: app/west.yml
   self:
     path: config

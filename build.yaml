@@ -13,7 +13,13 @@
 #
 ---
 include:
+  # - board: nice_nano_v2
+  #   shield: lily58_left nice_view_adapter nice_view
+  # - board: nice_nano_v2
+  #   shield: lily58_right nice_view_adapter nice_view
+
+  # Pete's Fork
   - board: nice_nano_v2
-    shield: lily58_left nice_view_adapter nice_view
+    shield: splitkb_aurora_lily58_left nice_view_adapter nice_view
   - board: nice_nano_v2
-    shield: lily58_right nice_view_adapter nice_view
+    shield: splitkb_aurora_lily58_right nice_view_adapter nice_view
