@@ -23,7 +23,7 @@ manifest:
     # Ref: https://github.com/zmkfirmware/zmk/pull/728
     - name: zmk
       remote: narze
-      revision: splitkb-aurora-lily58-with-double-encoders
+      revision: splitkb-aurora-lily58-with-double-encoders-infused-kim
       import: app/west.yml
   self:
     path: config
