@@ -65,7 +65,7 @@
 			bindings = <
 &kp GRAVE  &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp TILDE
 &kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &trans    &kp MINUS &kp KP_PLUS     &kp LBRC  &kp RBRC  &kp PIPE
-&kp F7    &kp F8    &kp F9          &kp F10   &kp F11   &kp F12                 &trans    &trans    &trans          &trans    &trans    &trans
+&mt LSHFT F7    &kp F8    &kp F9          &kp F10   &kp F11   &kp F12                 &trans    &trans    &trans          &trans    &trans    &trans
 &mo 3     &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans       &trans    &out OUT_TOG   &out OUT_TOG    &trans    &mo 3 &trans     &trans  &trans  &mo 3
                                               &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans
 			>;
@@ -75,15 +75,15 @@
 
 		raise_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
 // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-// |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
+// |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |                   |  +   |   -   |   =   |  [   |   ]   |   \   |
+// |       |     |     |      |      |      |        |  |       |      |       |       |      |       |       |
 //                     |      |      |      |        |  |       |      |       |       |
 			bindings = <
 &kp TILDE &kp N1 &kp N2 &kp N3  &kp N4  &kp N5                       &kp N6      &kp N7    &kp N8    &kp N9   &kp N0   &trans
 &kp F1    &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                       &trans      &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &trans
-&kp F7    &kp F8 &kp F9 &kp F10 &kp F11 &kp F12                      &trans      &trans    &trans    &trans   &trans   &trans
+&mt LSHFT F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12                      &trans      &trans    &trans    &trans   &trans   &trans
 &mo 3     &trans &trans &trans  &mo 3   &trans   &trans   &trans     &trans      &trans    &trans    &trans   &trans   &mo 3
                         &trans  &trans  &trans   &trans   &trans     &trans      &trans    &trans
 			>;
