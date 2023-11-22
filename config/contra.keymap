@@ -49,7 +49,8 @@
     &kp CAPS  &kp A     &kp S  &kp D    &kp F    &kp G              &kp H      &kp J       &kp K     &kp L   &kp SEMI &kp SQT
     &kp LSHFT &kp Z     &kp X  &kp C    &kp V    &kp B              &kp N      &kp M       &kp COMMA &kp DOT &kp FSLH &kp RET
     &mo RAISE &kp LCTRL &kp LALT  &kp LGUI    &mo LOWER  &kp SPACE  &kp SPACE  &mo RAISE   &kp BKSP &kp RALT &kp RCTRL &kp RSHFT
-          };
+          >;
+        };
 
         lower_layer {
             bindings = <
@@ -75,7 +76,7 @@
     &trans &kp LALT  &trans    &trans   &kp BSPC &kp LGUI   &kp LEFT  &kp DOWN &kp UP &kp RIGHT &kp DEL &trans
     &trans &trans    &trans    &trans   &trans   &trans     &trans    &trans   &trans &trans    &trans  &trans
     &trans &kp LCTRL &kp LALT  &kp LGUI &trans   &kp SPACE  &kp SPACE &trans   &kp RGUI  &kp RALT &kp RCTRL &kp RSHFT
-			>;
+            >;
         }
 
         sys_layer {
