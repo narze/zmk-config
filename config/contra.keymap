@@ -55,9 +55,9 @@
         lower_layer {
             bindings = <
     &kp GRAVE &kp EXCL  &kp AT   &kp HASH &kp DOLLAR  &kp PRCNT  &kp CARET &kp AMPS    &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp TILDE
-    &kp F1    &kp F2   kp F3    &kp F4      &kp F5     &kp F6    &trans    &kp MINUS   &kp KP_PLUS     &kp LBRC  &kp RBRC  &kp PIPE
-    &mt LSHFT F7 &kp F8   &kp F9   &kp F10     &kp F11    &kp F12   &trans    &kp EQUAL   &kp PG_DN       &kp HOME  &kp END   &kp ENTER
-    &mo SYS &kp LGUI  &kp LALT &sys_reset   &mo SYS    &kp SPACE &kp SPACE &mo SYS     &kp LEFT        &kp RIGHT &kp UP    &kp DOWN
+    &kp F1    &kp F2    &kp F3   &kp F4   &kp F5      &kp F6    &trans    &kp MINUS   &kp KP_PLUS     &kp LBRC  &kp RBRC  &kp PIPE
+    &mt LSHFT F7 &kp F8 &kp F9   &kp F10  &kp F11     &kp F12   &trans    &kp EQUAL   &kp PG_DN       &kp HOME  &kp END   &kp ENTER
+    &mo SYS &kp LGUI  &kp LALT &sys_reset &mo SYS     &kp SPACE &kp SPACE &mo SYS     &kp LEFT        &kp RIGHT &kp UP    &kp DOWN
             >;
         };
 
@@ -77,7 +77,7 @@
     &trans &trans    &trans    &trans   &trans   &trans     &trans    &trans   &trans &trans    &trans  &trans
     &trans &kp LCTRL &kp LALT  &kp LGUI &trans   &kp SPACE  &kp SPACE &trans   &kp RGUI  &kp RALT &kp RCTRL &kp RSHFT
             >;
-        }
+        };
 
         sys_layer {
             bindings = <
