@@ -8,35 +8,79 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define DEFAULT  0
-#define NUM_MODS 1
-#define BT_CTRL  2
+#define DEFAULT 0
+#define LOWER 1
+#define RAISE 2
+#define SD 3
+#define SYS 4
 
 / {
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&none>, <&bt BT_CLR>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&mo SD>;
+            layers = <DEFAULT>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
+    // ------------------------------------------------------------------------------------------------------------
+    // |  TAB  |  Q  |  W  |  E   |  R   |  T   |  Y   |  U    |  I    |  O   |   P   | BSPC  |
+    // |  CTRL |  A  |  S  |  D   |  F   |  G   |  H   |  J    |  K    |  L   |   ;   |   '   |
+    // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  N   |  M    |  ,    |  .   |   /   | ENTER |
+    // | RAISE | CTRL| ALT | GUI  | LOWER| SPACE|SPACE | UPPER | BKSP  | ALT  | CTRL  | SHIFT |
+          bindings = <
+    &kp TAB   &kp Q     &kp W  &kp E    &kp R    &kp T              &kp Y      &kp U       &kp I     &kp O   &kp P    &kp BSPC
+    &kp CAPS  &kp A     &kp S  &kp D    &kp F    &kp G              &kp H      &kp J       &kp K     &kp L   &kp SEMI &kp SQT
+    &kp LSHFT &kp Z     &kp X  &kp C    &kp V    &kp B              &kp N      &kp M       &kp COMMA &kp DOT &kp FSLH &kp RET
+    &mo RAISE &kp LCTRL &kp LALT  &kp LGUI    &mo LOWER  &kp SPACE  &kp SPACE  &mo RAISE   &kp BKSP &kp RALT &kp RCTRL &kp RSHFT
+          };
+
+        lower_layer {
             bindings = <
-    &kp ESC   &kp Q     &kp W    &kp E     &kp R       &kp T      &kp Y     &kp U        &kp I     &kp O     &kp P    &kp BSPC
-    &kp TAB   &kp A     &kp S    &kp D     &kp F       &kp G      &kp H     &kp J        &kp K     &kp L     &kp SEMI &kp SQT
-    &kp LSHFT &kp Z     &kp X    &kp C     &kp V       &kp B      &kp N     &kp M        &kp COMMA &kp DOT   &kp FSLH &kp ENTER
-    &kp LCTRL &kp LGUI  &kp LALT &kp BSLH  &to DEFAULT &kp SPACE  &trans    &to NUM_MODS &kp LEFT  &kp RIGHT &kp UP   &kp DOWN
+    &kp GRAVE &kp EXCL  &kp AT   &kp HASH &kp DOLLAR  &kp PRCNT  &kp CARET &kp AMPS    &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp TILDE
+    &kp F1    &kp F2   kp F3    &kp F4      &kp F5     &kp F6    &trans    &kp MINUS   &kp KP_PLUS     &kp LBRC  &kp RBRC  &kp PIPE
+    &mt LSHFT F7 &kp F8   &kp F9   &kp F10     &kp F11    &kp F12   &trans    &kp EQUAL   &kp PG_DN       &kp HOME  &kp END   &kp ENTER
+    &mo SYS &kp LGUI  &kp LALT &sys_reset   &mo SYS    &kp SPACE &kp SPACE &mo SYS     &kp LEFT        &kp RIGHT &kp UP    &kp DOWN
             >;
         };
 
-        num_mods {
+        raise_layer {
             bindings = <
-    &kp GRAVE &kp N1    &kp N2   &kp N3   &kp N4      &kp N5     &kp N6    &kp N7      &kp N8    &kp N9    &kp N0   &kp DEL
-    &kp TAB   &kp F1    &kp F2   &kp F3   &kp F4      &kp F5     &kp F6    &kp MINUS   &kp PG_UP &kp LBKT  &kp RBKT &kp BSLH
-    &kp LSHFT &kp F7    &kp F8   &kp F9   &kp F10     &kp F11    &kp F12   &kp EQUAL   &kp PG_DN &kp HOME  &kp END  &kp ENTER
-    &kp LCTRL &kp LGUI  &kp LALT &sys_reset   &to DEFAULT &kp SPACE  &trans    &mo BT_CTRL &kp LEFT  &kp RIGHT &kp UP   &kp DOWN
+    &kp TILDE    &kp N1 &kp N2 &kp N3  &kp N4  &kp N5    &kp N6      &kp N7    &kp N8    &kp N9   &kp N0   &trans
+    &kp F1       &kp F2 &kp F3 &kp F4  &kp F5  &kp F6    &trans      &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
+    &mt LSHFT F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12   &trans      &trans    &trans    &trans   &trans   &trans
+    &mo SYS     &trans &trans &trans  &mo SYS   &trans   &trans      &trans    &trans    &trans   &trans   &mo SYS
             >;
         };
 
-        bt_control {
+        superduper_layer {
+          	bindings = <
+    &trans &trans    &trans    &trans   &trans   &trans     &trans    &trans   &kp LS(LG(LBRC)) &kp LS(LG(RBRC)) &trans  &trans
+    &trans &kp LALT  &trans    &trans   &kp BSPC &kp LGUI   &kp LEFT  &kp DOWN &kp UP &kp RIGHT &kp DEL &trans
+    &trans &trans    &trans    &trans   &trans   &trans     &trans    &trans   &trans &trans    &trans  &trans
+    &trans &kp LCTRL &kp LALT  &kp LGUI &trans   &kp SPACE  &kp SPACE &trans   &kp RGUI  &kp RALT &kp RCTRL &kp RSHFT
+			>;
+        }
+
+        sys_layer {
             bindings = <
-    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans    &trans    &trans     &trans     &trans   &trans
+    &td0       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans    &trans    &trans     &trans     &trans   &sys_reset
     &trans     &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
     &trans     &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
     &trans     &trans       &trans       &trans       &trans       &trans       &trans    &trans    &bt BT_PRV &bt BT_NXT &trans   &trans
