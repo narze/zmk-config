@@ -50,7 +50,7 @@
     &kp TAB   &kp Q     &kp W  &kp E    &kp R    &kp T              &kp Y      &kp U       &kp I     &kp O   &kp P    &kp BSPC
     &kp CAPS  &kp A     &kp S  &kp D    &kp F    &kp G              &kp H      &kp J       &kp K     &kp L   &kp SEMI &kp SQT
     &kp LSHFT &kp Z     &kp X  &kp C    &kp V    &kp B              &kp N      &kp M       &kp COMMA &kp DOT &kp FSLH &kp RET
-    &mo RAISE &kp LCTRL &kp LALT  &kp LGUI  &lt LOWER MB1  &kp SPACE  &kp SPACE  &lt RAISE MB2   &kp BKSP &kp RALT &kp RCTRL &kp RSHFT
+    &mo RAISE &kp LCTRL &kp LALT  &kp LGUI  &lt LOWER MB1  &kp SPACE  &mkp LCLK  &lt RAISE MB2   &kp BKSP &kp RALT &kp RCTRL &kp RSHFT
           >;
         };
 
@@ -59,7 +59,7 @@
     &kp GRAVE &kp EXCL  &kp AT   &kp HASH &kp DOLLAR  &kp PRCNT  &kp CARET &kp AMPS    &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp TILDE
     &kp F1    &kp F2    &kp F3   &kp F4   &kp F5      &kp F6    &trans    &kp MINUS   &kp KP_PLUS     &kp LBRC  &kp RBRC  &kp PIPE
     &mt LSHFT F7 &kp F8 &kp F9   &kp F10  &kp F11     &kp F12   &trans    &kp EQUAL   &kp PG_DN       &kp HOME  &kp END   &kp ENTER
-    &mo SYS &kp LGUI  &kp LALT &sys_reset &mo SYS     &kp SPACE &kp SPACE &mo SYS     &kp LEFT        &kp RIGHT &kp UP    &kp DOWN
+    &mo SYS &kp LGUI  &kp LALT &sys_reset &mo SYS     &kp SPACE  &mkp LCLK &mo SYS     &kp LEFT        &kp RIGHT &kp UP    &kp DOWN
             >;
         };
 
